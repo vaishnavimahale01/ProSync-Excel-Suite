@@ -55,6 +55,3 @@ To build an all-in-one Excel suite that helps track expenses, organize tasks, an
 - Mobile-friendly UI with Excel Online.  
 
 ---
-
-## 📬 Contact  
-For questions or collaboration, reach out via [GitHub](https://github.com/your-username) or [LinkedIn](https://www.linkedin.com/in/your-profile).
