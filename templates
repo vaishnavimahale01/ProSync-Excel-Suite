@@ -1,0 +1,74 @@
+ProSync-Excel-Suite/
+├── templates/
+│   ├── Expense_Tracker_Template.xlsx
+│   ├── Task_Organizer_Template.xlsx
+│   └── Grade_Tracker_Template.xlsx
+Expense Tracker Template (Expense_Tracker_Template.xlsx)
+Date	Category	Description	Amount	Payment Method
+DD-MM-YYYY	Food	Description of expense	0.00	Cash/Credit/UPI
+Features:
+Auto Date Picker: To automatically pick the current date when a new entry is added.
+
+Excel Formula: =TODAY()
+
+Drop-down for Category:
+
+Right-click → Data Validation → List
+
+Options: Food, Transport, Entertainment, Utilities, Miscellaneous
+
+Drop-down for Payment Method:
+
+Options: Cash, Credit Card, UPI, Net Banking
+
+Auto-Sum for Amount:
+
+=SUM(D2:D100)
+
+Task Organizer Template (Task_Organizer_Template.xlsx)
+Task Name	Priority	Deadline	Status	Comments
+Description of Task	High/Medium/Low	DD-MM-YYYY	Pending/Completed	Notes about the task
+Features:
+Priority Drop-down List:
+
+Options: High, Medium, Low
+
+Status Drop-down List:
+
+Options: Pending, In Progress, Completed
+
+Conditional Formatting:
+
+If Status is "Completed," cell color changes to Green.
+
+If "In Progress," it changes to Yellow.
+
+If "Pending," it changes to Red.
+
+Deadline Alerts:
+
+Formula: =IF(TODAY()>C2, "Overdue", "On Time")
+Grade Tracker Template (Grade_Tracker_Template.xlsx)
+Subject	Credits	Marks Obtained	Total Marks	Grade
+Name of the Subject	0	0	0	-
+
+Features:
+Grade Calculation Formula:
+
+Formula:
+
+excel
+Copy
+Edit
+=IF(D2>=85, "A", IF(D2>=75, "B+", IF(D2>=65, "B", "C")))
+GPA Calculation:
+
+If you want to calculate GPA automatically:
+
+excel
+Copy
+Edit
+=SUMPRODUCT(B2:B100, C2:C100) / SUM(B2:B100)
+Total Marks Auto-Sum:
+
+=SUM(C2:C100)
