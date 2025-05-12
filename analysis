@@ -1,0 +1,58 @@
+ProSync-Excel-Suite/
+├── analysis/
+│   ├── VBA_Automation_Code.txt      # VBA script for automation
+│   ├── Expense_Analysis.xlsx        # Prebuilt analysis for expenses
+│   ├── Task_Analysis.xlsx           # Prebuilt analysis for tasks
+│   └── Grade_Analysis.xlsx          # Prebuilt analysis for grades
+Sub ExpenseTrackerAutomation()
+    Dim LastRow As Long
+    LastRow = Worksheets("Expense Tracker").Cells(Rows.Count, 1).End(xlUp).Row
+    
+    ' Auto-Sum for Amount
+    Worksheets("Expense Tracker").Range("E" & LastRow + 1).Formula = "=SUM(D2:D" & LastRow & ")"
+    
+    ' Add Header for Total if not exists
+    If Worksheets("Expense Tracker").Range("C" & LastRow + 1).Value = "" Then
+        Worksheets("Expense Tracker").Range("C" & LastRow + 1).Value = "Total Amount"
+    End If
+End Sub
+Sub TaskOrganizerAutomation()
+    Dim LastRow As Long
+    LastRow = Worksheets("Task Organizer").Cells(Rows.Count, 1).End(xlUp).Row
+    
+    For i = 2 To LastRow
+        If Worksheets("Task Organizer").Cells(i, 3).Value < Date And Worksheets("Task Organizer").Cells(i, 4).Value <> "Completed" Then
+            Worksheets("Task Organizer").Cells(i, 4).Interior.Color = RGB(255, 102, 102)  ' Red for overdue
+            Worksheets("Task Organizer").Cells(i, 4).Value = "Overdue"
+        ElseIf Worksheets("Task Organizer").Cells(i, 4).Value = "Completed" Then
+            Worksheets("Task Organizer").Cells(i, 4).Interior.Color = RGB(102, 255, 102)  ' Green for completed
+        Else
+            Worksheets("Task Organizer").Cells(i, 4).Interior.Color = RGB(255, 255, 204)  ' Yellow for pending
+        End If
+    Next i
+End Sub
+Sub GradeTrackerAutomation()
+    Dim LastRow As Long
+    LastRow = Worksheets("Grade Tracker").Cells(Rows.Count, 1).End(xlUp).Row
+    
+    For i = 2 To LastRow
+        Dim Marks As Integer
+        Marks = Worksheets("Grade Tracker").Cells(i, 3).Value
+        
+        If Marks >= 85 Then
+            Worksheets("Grade Tracker").Cells(i, 5).Value = "A"
+        ElseIf Marks >= 75 Then
+            Worksheets("Grade Tracker").Cells(i, 5).Value = "B+"
+        ElseIf Marks >= 65 Then
+            Worksheets("Grade Tracker").Cells(i, 5).Value = "B"
+        Else
+            Worksheets("Grade Tracker").Cells(i, 5).Value = "C"
+        End If
+    Next i
+    
+    ' GPA Calculation
+    Worksheets("Grade Tracker").Range("F2").Formula = "=SUMPRODUCT(B2:B" & LastRow & ", C2:C" & LastRow & ") / SUM(B2:B" & LastRow & ")"
+    Worksheets("Grade Tracker").Range("E1").Value = "GPA"
+End Sub
+
+
