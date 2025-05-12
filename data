@@ -1,0 +1,25 @@
+1Expense Tracker Sheet
+Date	Category	Description	Amount	Payment Method
+01-05-2025	Food	Grocery Shopping	500	Cash
+02-05-2025	Transport	Uber Ride	250	Credit Card
+03-05-2025	Entertainment	Movie Tickets	300	UPI
+04-05-2025	Food	Dinner at Restaurant	800	Cash
+05-05-2025	Utilities	Electricity Bill	1500	Net Banking
+
+2Task Organizer Sheet
+Task Name	Priority	Deadline	Status	Comments
+Complete Assignment	High	06-05-2025	Pending	Need to research
+Project Report Review	Medium	08-05-2025	In Progress	Awaiting approval
+Grocery Shopping	Low	05-05-2025	Completed	Bought essentials
+Prepare Presentation	High	07-05-2025	Pending	Slides remaining
+Organize Files	Low	10-05-2025	Pending	No urgency
+
+Grade Tracker Sheet
+Subject	Credits	Marks Obtained	Total Marks	Grade
+Structural Analysis	4	85	100	A
+Environmental Engg.	3	78	100	B+
+Geotechnical Engg.	4	82	100	A
+Concrete Design	3	76	100	B+
+Hydrology	2	88	100	A
+
+
